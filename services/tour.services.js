@@ -22,3 +22,11 @@ exports.getToursService = async (queries) => {
 exports.getTourService = async (id) => {
     return await Tour.findById(id);
 }
+
+// Update Tour Services Here
+exports.updateTourService = async (id, data) => {
+    return await Tour.findByIdAndUpdate(id, data, {
+        new: true,
+        runValidators: true
+    });
+}

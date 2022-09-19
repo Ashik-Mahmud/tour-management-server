@@ -5,7 +5,7 @@ const viewCount = require('../middlewares/viewCount');
 
 
 /* Create Tour */
-router.post('/', tourController.createTour).get("/", tourController.getTours).get("/:id", viewCount ,tourController.getTour);
+router.post('/', tourController.createTour).get("/", tourController.getTours).get("/:id", viewCount ,tourController.getTour).patch("/:id", tourController.updateTour)
 
 
 
