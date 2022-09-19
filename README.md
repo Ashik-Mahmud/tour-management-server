@@ -13,7 +13,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get all Tours
 
 ```
- Endpoint - GET /api/tours
+  GET /api/tours
 ```
 
 | Allow Query   | Type     | Description                                           |
@@ -25,11 +25,11 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Create Tour
 
 ```
-  Endpoint - POST /api/tours
+  POST /api/tours
 ```
 
-| Allow Query | Description |
-| :-------- | | :------------------------- |
+| Allow Query          | Description                                  |
+| :------------------- | :------------------------------------------- |
 | `no query available` | **Note**. `Its validated by mongoose schema` |
 
 #### Informations for POST endpoints
@@ -53,7 +53,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get Single Tour
 
 ```
-  Endpoint - GET /api/tours/${id}
+  GET /api/tours/${id}
 ```
 
 | params | Type     | Description                       |
@@ -63,7 +63,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Patch Tour
 
 ```
-  Endpoint - PATCH /api/tour/${id}
+  PATCH /api/tour/${id}
 ```
 
 | params | Type     | Description                        |
@@ -73,7 +73,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get Top 3 Trending Tour
 
 ```
-  Endpoint - PATCH /api/tour/trending
+  PATCH /api/tour/trending
 ```
 
 | Description                                                                |
@@ -83,7 +83,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get Top 3 Cheapest Tour
 
 ```
- Endpoint - PATCH /api/tour/cheapest
+  PATCH /api/tour/cheapest
 ```
 
 | Description                                                                    |
