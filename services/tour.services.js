@@ -16,3 +16,9 @@ exports.getToursService = async (queries) => {
     .sort(queries.sort);
   return {pageCount, counts, result };
 };
+
+
+// Get Single Tour Services Here
+exports.getTourService = async (id) => {
+    return await Tour.findById(id);
+}
