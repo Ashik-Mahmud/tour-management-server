@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+const createDatabaseConnection = require('./utils/dbConnection');
+
 const app = express();
 
 const port = process.env.PORT || 5000;
@@ -15,6 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
     res.send({success: true, message: "Welcome to the Tour Management System (TMS) API"});
 });
+
+/* Database Connections */
+createDatabaseConnection();
 
 /* Listen to the PORT */
 app.listen(port, () => {
