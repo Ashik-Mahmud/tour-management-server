@@ -4,10 +4,10 @@ const app = require('./app');
 
 
 /* Imports Routes Area */
-
+const tourRouter = require('./routes/tour.route');
 
 /* Init Routes */
-
+app.use('/api/v1/tours', tourRouter);
 
 
 
