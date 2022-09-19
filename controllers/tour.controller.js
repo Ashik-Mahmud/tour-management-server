@@ -31,7 +31,7 @@ const createTour = async (req, res) => {
 
 const getTours = async (req, res) => {
     try {
-        const { fields, page, limit } = req.query;
+        const { fields, page, limit, sort } = req.query;
         const queries = {};
 
         /* by fields */
@@ -47,7 +47,13 @@ const getTours = async (req, res) => {
             const skip = (currentPage - 1) * limitPerPage;
             queries.skip = skip;
             queries.limit = limitPerPage;
-        }              
+        }   
+        
+        /* by sorted */
+        if(sort){
+            const sortBy = sort.split(',').join(' ');
+            queries.sort = sortBy;
+        }
         
         const tours = await getToursService(queries);
         res.status(200).send({
