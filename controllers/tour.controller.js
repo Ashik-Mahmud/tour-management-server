@@ -1,6 +1,6 @@
 
 
-const { createTourService, getToursService, getTourService, updateTourService, getTrendingToursService } = require("../services/tour.services");
+const { createTourService, getToursService, getTourService, updateTourService, getTrendingToursService, getCheapestToursService } = require("../services/tour.services");
 
 
 //@routes tours/createTours
@@ -129,6 +129,26 @@ const getTrendingTours = async (req, res) => {
 }
 
 
+// @routes tours/getCheapestTours
+//  GET /api/tours/cheapest
+//  Get cheapest tours
+//  Public
+const getCheapestTours = async (req, res) => {
+    try {
+        const tours = await getCheapestToursService();
+        res.status(200).send({
+            success: true,
+            data: tours
+        });
+    } catch (err) {
+        res.status(400).send({
+            success: false,
+            message: err.message
+        });
+    }
+}
 
 
-module.exports = {createTour, getTours, getTour, updateTour, getTrendingTours}
+
+
+module.exports = {createTour, getTours, getTour, updateTour, getTrendingTours, getCheapestTours}

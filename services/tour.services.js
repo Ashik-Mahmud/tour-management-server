@@ -35,3 +35,8 @@ exports.updateTourService = async (id, data) => {
 exports.getTrendingToursService = async () => {
     return await Tour.find().sort({views: -1}).limit(3);
 }
+
+// Cheapest Tours Services Here
+exports.getCheapestToursService = async () => {
+    return await Tour.find().sort({price: 1}).limit(3);
+}
