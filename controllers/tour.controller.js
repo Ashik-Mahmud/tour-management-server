@@ -1,6 +1,6 @@
 
 
-const { createTourService } = require("../services/tour.services");
+const { createTourService, getToursService } = require("../services/tour.services");
 
 
 //@routes tours/createTours
@@ -24,5 +24,30 @@ const createTour = async (req, res) => {
 }
 
 
+// @routes tours/getTours
+//  GET /api/tours
+//  Get all tours
+//  Public
 
-module.exports = {createTour}
+const getTours = async (req, res) => {
+    return res.send({
+        success: true,
+        message: "welcome to getTours"
+    })
+    try {
+        const tours = await getToursService();
+        res.status(200).send({
+            success: true,
+            data: tours
+        });
+    } catch (err) {
+        res.status(400).send({
+            success: false,
+            message: err.message
+        });
+    }
+}
+
+
+
+module.exports = {createTour, getTours}

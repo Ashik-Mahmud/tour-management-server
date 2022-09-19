@@ -3,6 +3,9 @@ require('dotenv').config();
 
 /* Connect Mongoose Here */
 
+console.log(process.env.DATABASE_URL);
+
+
 const createDatabaseConnection = () =>{
     mongoose.connect(process.env.DATABASE_URL, {}, (err) => {
         if(err){
