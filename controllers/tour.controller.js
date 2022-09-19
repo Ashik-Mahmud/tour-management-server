@@ -30,12 +30,26 @@ const createTour = async (req, res) => {
 //  Public
 
 const getTours = async (req, res) => {
-    return res.send({
-        success: true,
-        message: "welcome to getTours"
-    })
     try {
-        const tours = await getToursService();
+        const { fields, page, limit } = req.query;
+        const queries = {};
+
+        /* by fields */
+        if(fields){
+            const fieldsArray = fields.split(',').join(' ');
+            queries.select = fieldsArray;
+        }
+
+        /* by paginated */         
+         if(page || limit){
+            const currentPage = parseInt(page);
+            const limitPerPage = parseInt(limit);
+            const skip = (currentPage - 1) * limitPerPage;
+            queries.skip = skip;
+            queries.limit = limitPerPage;
+        }              
+        
+        const tours = await getToursService(queries);
         res.status(200).send({
             success: true,
             data: tours
