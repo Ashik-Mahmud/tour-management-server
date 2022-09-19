@@ -10,7 +10,7 @@ const { createTourService } = require("../services/tour.services");
 
 const createTour = async (req, res) => {
     try {
-        const tour = await createTourService();
+        const tour = await createTourService(req.body);
         res.status(201).send({
             success: true,
             data: tour

@@ -7,7 +7,7 @@ const tourSchema = new mongoose.Schema(
       required: [true, "A tour must have a name"],
       unique: true,
       trim: true,
-      minlength: [40, "A tour name must have less or equal then 40 characters"],
+      minlength: [20, "A tour name must have less or equal then 20 characters"],
     },
     duration: {
       type: Number,
@@ -50,7 +50,7 @@ const tourSchema = new mongoose.Schema(
       },
       message: "Discount price ({VALUE}) should be below regular price",
     },
-    summary: {
+    description: {
       type: String,
       trim: true,
       required: [true, "A tour must have a description"],
@@ -62,8 +62,7 @@ const tourSchema = new mongoose.Schema(
     views: {
       type: Number,
       default: 0,
-    },
-    startDates: [Date],
+    }
   },
   {
     timestamps: true,

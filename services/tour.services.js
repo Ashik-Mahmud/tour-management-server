@@ -3,7 +3,7 @@
 
 const Tour = require("../models/tour.model");
 
-exports.createTourService = async() =>{
-    return await Tour.create(req.body);
+exports.createTourService = async(data) =>{
+    return await Tour.create(data);
 }
 
