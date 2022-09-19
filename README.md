@@ -32,6 +32,24 @@ This is tour Management System Server which has created additional endpoints. Th
 | :-------- | | :------------------------- |
 | `no query available` | **Note**. `Its validated by mongoose schema` |
 
+#### Informations for POST endpoints
+
+```json
+{
+  "name": "Kuakata cebla sorif with 2 days",
+  "duration": 2,
+  "maxGroupSize": 2,
+  "difficulty": "easy",
+  "ratingsAverage": 4.3,
+  "ratingsQuantity": 140,
+  "price": 4000,
+  "priceDiscount": 0,
+  "description": "The native people of Sajek valley are ethnic minorities. Among them Chakma, Marma, Tripura, Pankho, Kaibarta, Lushai, other indigenous Assamese communities, and Sagma are mentionable. Women seem to be more involved in economic activities here.[citation needed] Tea stalls, food joints and roadside marketplaces are dominated by women.[citation needed] Picking fruits and vegetables early in the morning is a common trade here.[citation needed] They are not fluent in Bengali but the young population speak some English.[5]",
+  "image": "https://avijatrik.org/wp-content/uploads/2019/06/cover22-870x555.jpg",
+  "views": 1
+}
+```
+
 #### Get Single Tour
 
 ```
