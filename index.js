@@ -7,7 +7,7 @@ const app = require('./app');
 const tourRouter = require('./routes/tour.route');
 
 /* Init Routes */
-app.use('/api/tours', tourRouter);
+app.use('/api/', tourRouter);
 
 
 

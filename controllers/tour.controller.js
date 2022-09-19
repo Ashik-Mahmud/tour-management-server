@@ -1,6 +1,6 @@
 
 
-const { createTourService, getToursService, getTourService, updateTourService } = require("../services/tour.services");
+const { createTourService, getToursService, getTourService, updateTourService, getTrendingToursService } = require("../services/tour.services");
 
 
 //@routes tours/createTours
@@ -75,7 +75,7 @@ const getTours = async (req, res) => {
 //  Public
 const getTour = async (req, res) => {
     try {
-        const tour = await getTourService(req.params.id);
+        const tour = await getTourService(req.params.id.trim());
         res.status(200).send({
             success: true,
             data: tour
@@ -94,7 +94,7 @@ const getTour = async (req, res) => {
 //  Public
 const updateTour = async (req, res) => {
     try {
-        const tour = await updateTourService(req.params.id, req.body);
+        const tour = await updateTourService(req.params.id.trim(), req.body);
         res.status(200).send({
             success: true,
             data: tour
@@ -108,7 +108,27 @@ const updateTour = async (req, res) => {
 }
 
 
+// @routes tours/getTrendingTours
+//  GET /api/tours/trending
+//  Get trending tours
+//  Public
+const getTrendingTours = async (req, res) => {
+    try {
+                
+        const tours = await getTrendingToursService();
+        res.status(200).send({
+            success: true,
+            data: tours
+        });
+    } catch (err) {
+        res.status(400).send({
+            success: false,
+            message: err.message
+        });
+    }
+}
 
 
 
-module.exports = {createTour, getTours, getTour, updateTour}
+
+module.exports = {createTour, getTours, getTour, updateTour, getTrendingTours}

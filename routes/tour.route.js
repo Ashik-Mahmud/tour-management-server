@@ -5,8 +5,11 @@ const viewCount = require('../middlewares/viewCount');
 
 
 /* Create Tour */
-router.post('/', tourController.createTour).get("/", tourController.getTours).get("/:id", viewCount ,tourController.getTour).patch("/:id", tourController.updateTour)
 
-
+router.post('/tours', tourController.createTour)
+router.get("/tours", tourController.getTours)
+router.get("/tours/:id", viewCount ,tourController.getTour)
+router.patch("/tour/:id", tourController.updateTour)
+router.get("/tour/trending", tourController.getTrendingTours);
 
 module.exports = router;

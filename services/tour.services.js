@@ -30,3 +30,8 @@ exports.updateTourService = async (id, data) => {
         runValidators: true
     });
 }
+
+// Trending Tours Services Here
+exports.getTrendingToursService = async () => {
+    return await Tour.find().sort({views: -1}).limit(3);
+}
