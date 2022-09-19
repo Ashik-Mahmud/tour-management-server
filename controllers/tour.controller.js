@@ -1,13 +1,33 @@
+
+
+//@routes tours/createTours
+//  POST /api/tours
+//  Create a tour
+//  Public
+const createTour = async (req, res) => {
+    try {
+        const tour = await Tour.create(req.body);
+        res.status(201).send({
+            success: true,
+            data: tour
+        });
+    } catch (err) {
+        res.status(400).send({
+            success: false,
+            message: err.message
+        });
+    }
+}
+
+
+
+
 //@routes tours/getAllTours
 //  GET /api/v1/tours
 //  Get all tours
 //  Public
 const getAllTours = async (req, res) => {
 
-    return res.status(200).send({
-        success: true,
-        message: "Get all tours"
-    });
     try {
         const tours = await Tour.find();
         res.status(200).json({
@@ -25,4 +45,4 @@ const getAllTours = async (req, res) => {
 
 
 
-module.exports = {getAllTours}
+module.exports = {getAllTours, createTour}
