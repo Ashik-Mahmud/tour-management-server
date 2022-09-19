@@ -7,8 +7,5 @@ const tourController = require('../controllers/tour.controller');
 router.post('/', tourController.createTour);
 
 
-/* Get All Tours */
-router.get('/', tourController.getAllTours);
-
 
 module.exports = router;
