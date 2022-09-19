@@ -4,7 +4,7 @@ This is tour Management System Server which has created additional endpoints. Th
 
 ## API Reference
 
-#### Live Link
+#### Base URL
 
 ```
  https://tour-management-server-gd8n.onrender.com
@@ -13,7 +13,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get all Tours
 
 ```
-  GET /api/tours
+ Endpoint - GET /api/tours
 ```
 
 | Allow Query   | Type     | Description                                           |
@@ -25,7 +25,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Create Tour
 
 ```
-  POST /api/tours
+  Endpoint - POST /api/tours
 ```
 
 | Allow Query | Description |
@@ -35,7 +35,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get Single Tour
 
 ```
-  GET /api/tours/${id}
+  Endpoint - GET /api/tours/${id}
 ```
 
 | params | Type     | Description                       |
@@ -45,7 +45,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Patch Tour
 
 ```
-  PATCH /api/tour/${id}
+  Endpoint - PATCH /api/tour/${id}
 ```
 
 | params | Type     | Description                        |
@@ -55,7 +55,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get Top 3 Trending Tour
 
 ```
-  PATCH /api/tour/trending
+  Endpoint - PATCH /api/tour/trending
 ```
 
 | Description                                                                |
@@ -65,7 +65,7 @@ This is tour Management System Server which has created additional endpoints. Th
 #### Get Top 3 Cheapest Tour
 
 ```
-  PATCH /api/tour/cheapest
+ Endpoint - PATCH /api/tour/cheapest
 ```
 
 | Description                                                                    |
